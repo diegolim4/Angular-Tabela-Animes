@@ -1,6 +1,6 @@
-<h2>Lista de Animes</h2>
+<h1 style>Lista de Animes</h1>
 
-<table class="table table-striped">
+<table class="table table-hover">
   <thead>
     <tr>
       <th>Logo</th>
@@ -18,11 +18,12 @@
       <td>{{animes.nome}}</td>
       <td>{{animes.arcos}}</td>
       <td>{{animes.duracaoEp}}</td>
-      <td>{{animes.anoEstreia}}</td>
+      <td>{{animes.anoEstreia}}</td>      
       <td>
         {{animes.avaliar}}
         <app-star [rating]="animes.avaliar"></app-star>
       </td>
+      <td>{{animes.opcoes}}</td>
     </tr>
   </tbody>
 

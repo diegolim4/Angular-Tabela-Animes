@@ -67,6 +67,8 @@ export class AnimeListComponent implements OnInit{
         anoEstreia: 2002,
         opcoes:'',
       }
+
+      
     ]
   }
 
