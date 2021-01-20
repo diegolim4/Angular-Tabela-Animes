@@ -1,0 +1,31 @@
+<h2>Lista de Animes</h2>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Logo</th>
+      <th>Name</th>
+      <th>Arcos</th>
+      <th>Duração</th>
+      <th>Ano de Estréia</th>
+      <th>Avaliação</th>
+      <th>Opções</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let animes of animes"> <!--Variavel de template -->
+      <td><img [src]="animes.imageUrl" width="120" height="60"></td>
+      <td>{{animes.nome}}</td>
+      <td>{{animes.arcos}}</td>
+      <td>{{animes.duracaoEp}}</td>
+      <td>{{animes.anoEstreia}}</td>
+      <td>
+        {{animes.avaliar}}
+        <app-star [rating]="animes.avaliar"></app-star>
+      </td>
+    </tr>
+  </tbody>
+
+</table>
+
+
