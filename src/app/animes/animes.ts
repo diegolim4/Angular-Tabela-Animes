@@ -6,6 +6,6 @@ export class Animes{
     avaliar: number;
     anoEstreia: Number;
     opcoes:string;
-    descricao: string;  
+    nEps: Number;  
   }
   

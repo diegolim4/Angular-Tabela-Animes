@@ -10,14 +10,28 @@ import { Animes } from "./animes";
 })
 export class AnimeListComponent implements OnInit{ 
 
-  animes: Animes[] = [];
+  filteredAnimes: Animes[] =[]
+  
+  _animes: Animes[] = [];
 
-  constructor(private animeService: AnimeService) {}
+  _filterBy: string;  
+
+  constructor(private animeService: AnimeService) { }
   
   ngOnInit(): void{
-    this.animes = this.animeService.retrieveAll();
+    this._animes = this.animeService.retrieveAll();
+    this.filteredAnimes = this._animes;
   }
 
+  set filter(value: string){
+    this._filterBy = value;
+    
+    this.filteredAnimes = this._animes.filter((anime: Animes) => anime.nome.toLocaleLowerCase().indexOf(this._filterBy.toLocaleLowerCase()) >-1);
+  }
+
+  get filter(){
+    return this._filterBy;
+  }
 
 }
 

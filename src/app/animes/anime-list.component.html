@@ -1,11 +1,20 @@
 <h1 style>Lista de Animes</h1>
 
+<div class="form-group row">
+  <label class="col-sm2 col-from-label" >Procurar Anime:</label>
+  
+  <div class="col-sm-10">
+    <input [(ngModel)]="filter" class="form-control">
+  </div>
+
+</div>
+
 <table class="table table-hover">
   <thead>
     <tr>
       <th>Logo</th>
       <th>Name</th>
-      <th>Descrição</th>
+      <th>Nº de Episódios</th>
       <th>Arcos</th>
       <th>Duração</th>
       <th>Ano de Estréia</th>
@@ -14,17 +23,14 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let animes of animes"> <!--Variavel de template -->
+    <tr *ngFor="let animes of  filteredAnimes"> <!--Variavel de template -->
       <td><img [src]="animes.imageUrl" width="120" height="60"></td>
       <td>{{animes.nome}}</td>
-      <td>{{animes.descricao}}</td>
+      <td>{{animes.nEps}}</td>
       <td>{{animes.arcos}}</td>
       <td>{{animes.duracaoEp}}</td>
       <td>{{animes.anoEstreia}}</td>      
-      <td>
-        {{animes.avaliar}}
-        <app-star [rating]="animes.avaliar"></app-star>
-      </td>
+      <td><app-star [rating]="animes.avaliar"></app-star></td>      
       <td>{{animes.opcoes}}</td>
     </tr>
   </tbody>
