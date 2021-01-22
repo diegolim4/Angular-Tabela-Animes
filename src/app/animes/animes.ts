@@ -5,6 +5,7 @@ export class Animes{
     duracaoEp: Number;
     avaliar: number;
     anoEstreia: Number;
-    opcoes:string;  
+    opcoes:string;
+    descricao: string;  
   }
   
